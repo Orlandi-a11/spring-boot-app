@@ -1,6 +1,6 @@
 package br.gov.sp.fatec.springbootapp.service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +23,7 @@ public List<Aluno> listarTodosAlunos() {
     return alunoRepository.findAll();
 }
 
-
-public List<Aluno> buscarAlunosPorPalavraChaveOuData(String keyword, LocalDateTime maxDate) {
+public List<Aluno> buscarAlunosPorPalavraChaveOuData(String keyword, LocalDate maxDate) {
     return alunoRepository.findByKeywordOrDataMatriculaBefore(keyword.toLowerCase(), maxDate);
 }
-
-
-    
 }

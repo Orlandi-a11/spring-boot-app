@@ -1,6 +1,7 @@
 package br.gov.sp.fatec.springbootapp.entity;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,13 +25,20 @@ public class Aluno {
     private String emailInstitucional;
 
     @Column(name = "alu_data_matricula")
-    private LocalDateTime dataMatricula;
+    private LocalDate dataMatricula;
 
     @Column(name = "alu_indice")
     private Float indice;
 
-    // Constructors, getters, and setters
+
     public Aluno() {}
+
+    public Aluno(String nomeCompleto, String emailInstitucional, LocalDate dataMatricula, Float indice) {
+        this.nomeCompleto = nomeCompleto;
+        this.emailInstitucional = emailInstitucional;
+        this.dataMatricula = dataMatricula;
+        this.indice = indice;
+    }
 
     public Long getId() {
         return id;
@@ -56,11 +64,11 @@ public class Aluno {
         this.emailInstitucional = emailInstitucional;
     }
 
-    public LocalDateTime getDataMatricula() {
+    public LocalDate getDataMatricula() {
         return dataMatricula;
     }
 
-    public void setDataMatricula(LocalDateTime dataMatricula) {
+    public void setDataMatricula(LocalDate dataMatricula) {
         this.dataMatricula = dataMatricula;
     }
 
